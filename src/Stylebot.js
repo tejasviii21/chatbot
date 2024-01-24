@@ -18,7 +18,7 @@ function StyleBot() {
         setMessage([...message, userMsg]);
         setInputText("");
     
-        fetch("http://127.0.0.1:5000/predict", {
+        fetch("http://127.0.0.1:5000/chatbot", {
           method: "POST",
           body: JSON.stringify({ message: inputText }),
           mode: "cors",
@@ -28,7 +28,8 @@ function StyleBot() {
         })
           .then((response) => response.json())
           .then((data) => {
-            const botMsg = { name: "Sam", message: data.answer };
+            console.log(data);
+            const botMsg = { name: "Sam", message: data.response };
             setMessage([...message, botMsg]);
           })
           .catch((error) => {
@@ -70,7 +71,8 @@ function StyleBot() {
 
   return (
     <Flex
-      className={`chatbox ${isOpen ? "chatbox--active" : ""}`}
+    className={`chatbox ${isOpen ? "chatbox--active" : ""}`}
+
       position="absolute"
       bottom="30px"
       right="30px"
@@ -162,7 +164,7 @@ function StyleBot() {
               textAlign="left"
             />
             <Button
-              className="chatbox__send--footer send__button"
+              className="chatbox_send--footer send_button"
               color="white"
               onClick={onSendButton}
               borderRadius="50px"
@@ -262,7 +264,7 @@ export default StyleBot;
 
 // {/* <Flex
 //       boxSizing='border-box'
-//       className={`chatbox ${isOpen ? "chatbox--active" : ""}`}
+//       className={chatbox ${isOpen ? "chatbox--active" : ""}}
 //       position="absolute"
 //       bottom="30px"
 //       right="30px"
@@ -337,7 +339,7 @@ export default StyleBot;
 //             textAlign="left"
 //           />
 //           <Button
-//             className="chatbox__send--footer send__button"
+//             className="chatbox_send--footer send_button"
 //             color="white"
 //             onClick={onSendButton}
 //             borderRadius="50px"

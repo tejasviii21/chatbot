@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.messages__item--visitor {
+  background-color: #611c2e;
+  color: white;
+  align-self: flex-end;
+  border-radius: 15px 20px 15px 0;
+  max-width: 75%;
+  width: fit-content;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+.messages__item--operator {
+  background-color: var(--primary);
+  color: white;
+  align-self: flex-start;
+  border-radius: 15px 20px 0 15px;
+  max-width: 75%;
+  width: fit-content;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin: 0.5rem;
+  padding: 1rem;
+}
