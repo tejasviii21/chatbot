@@ -32,7 +32,7 @@ def chatbot():
     # answer = response.choices[0].text.strip()
     from openai import OpenAI
 
-    client = OpenAI(api_key = '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')
+    client = OpenAI(api_key = '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')
 
     stream = client.chat.completions.create(
         model="gpt-3.5-turbo",
